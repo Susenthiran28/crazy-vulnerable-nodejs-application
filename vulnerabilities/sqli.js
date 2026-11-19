@@ -14,27 +14,50 @@ const connection = mysql.createConnection({
 connection.connect();
 
 router.get('/example1/user/:id', (req,res) => {
-    let userId = req.params.id;
-    let query = {
-        sql : "SELECT * FROM users WHERE id=" + userId
+    const userId = Number(req.params.id);
+    if (!Number.isInteger(userId)) {
+        return res.status(400).json({ error: 'Invalid user id' });
     }
-    connection.query(query,(err, result) => {
+
+    let query = {
+        sql: 'SELECT * FROM users WHERE id = ?',
+        values: [userId]
+    }
+    connection.query(query, (err, result) => {
+        if (err) {
+            return res.status(500).json({ error: 'Database error' });
+        }
         res.json(result);
     });
 })
 
 router.get('/example2/user/:id',  (req,res) => {
-    let userId = req.params.id;
-    connection.query("SELECT * FROM users WHERE id=" + userId,(err, result) => {
+    const userId = Number(req.params.id);
+    if (!Number.isInteger(userId)) {
+        return res.status(400).json({ error: 'Invalid user id' });
+    }
+
+    connection.query('SELECT * FROM users WHERE id = ?', [userId], (err, result) => {
+        if (err) {
+            return res.status(500).json({ error: 'Database error' });
+        }
         res.json(result);
     });
 })
 
 router.get('/example3/user/:id',  (req,res) => {
-    let userId = req.params.id;
+    const userId = Number(req.params.id);
+    if (!Number.isInteger(userId)) {
+        return res.status(400).json({ error: 'Invalid user id' });
+    }
+
     connection.query({
-        sql : "SELECT * FROM users WHERE id=" +userId
-    },(err, result) => {
+        sql: 'SELECT * FROM users WHERE id = ?',
+        values: [userId]
+    }, (err, result) => {
+        if (err) {
+            return res.status(500).json({ error: 'Database error' });
+        }
         res.json(result);
     });
 })
