@@ -19,11 +19,16 @@
   "main": "index.js",
   "name": "crazy-vulnerable-nodejs-application",
   "overrides": {
+    "ajv": "6.14.0",
+    "bl": "2.2.1",
     "body-parser": "1.20.9",
     "form-data": "2.5.6",
     "json-schema": "0.4.0",
     "lodash": "4.18.0",
-    "proxy-addr": "2.0.8"
+    "path-to-regexp": "0.1.13",
+    "proxy-addr": "2.0.8",
+    "qs": "6.16.1",
+    "semver": "5.7.2"
   },
   "repository": {
     "type": "git",
