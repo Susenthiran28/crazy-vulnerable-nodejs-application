@@ -6,7 +6,7 @@
   "dependencies": {
     "body-parser": "1.20.9",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
+    "express": "4.20.0",
     "faker": "^4.1.0",
     "lodash": "4.18.0",
     "mongodb": "^3.5.6",
@@ -22,13 +22,17 @@
     "ajv": "6.14.0",
     "bl": "2.2.1",
     "body-parser": "1.20.9",
+    "cookie": "0.7.0",
+    "express": "4.20.0",
     "form-data": "2.5.6",
     "json-schema": "0.4.0",
     "lodash": "4.18.0",
     "path-to-regexp": "0.1.13",
     "proxy-addr": "2.0.8",
-    "qs": "6.16.1",
-    "semver": "5.7.2"
+    "qs": "6.16.0",
+    "semver": "5.7.2",
+    "tough-cookie": "4.1.3",
+    "uuid": "11.1.1"
   },
   "repository": {
     "type": "git",
